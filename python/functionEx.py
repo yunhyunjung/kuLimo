@@ -1,3 +1,4 @@
+#함수정의
 def print_3_time():
 
     print("hello")
