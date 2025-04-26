@@ -1,0 +1,24 @@
+import rospy
+from std_srvs.srv import SetBool, SetBoolResponse, SetBoolRequest
+
+class ServiceServer:
+    def __init__(self):
+        self.srv = rospy.Service('setBool', SetBool, self.setBool_callback)
+
+    
+    def setBool_callback(self, request:SetBoolRequest):
+        response = SetBoolResponse
+        #server to do
+        return response        
+
+
+def main():
+    rospy.init_node("service_server")
+    node = ServiceServer()
+    try:
+        rospy.spin()
+    except rospy.ROSInterruptException:
+        pass
+
+if __name__ == "__main__":
+    main()
